@@ -1,16 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 function HomePage() {
+  const [file, setFiles] = useState(null);
   return (
     <div>
       <form
         onSubmit={async (e) => {
-          e.preventDefault()
+          e.preventDefault();
+
+          const formData = new FormData()
+          formData.append('image', file)
+
           const response = await fetch("/api/upload", {
             method: "POST",
+            body: formData,
+           
           });
-          
+
           const data = await response.json();
           console.log(data);
         }}
@@ -18,7 +25,7 @@ function HomePage() {
         <input
           type="file"
           onChange={(e) => {
-            console.log(e.target.files[0]);
+            setFiles(e.target.files[0]);
           }}
         />
         <button>Enviar</button>
