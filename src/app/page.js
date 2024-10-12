@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 function HomePage() {
   const [file, setFiles] = useState(null);
+  const [imageUrl ,setImageUrl] = useState(null);
   return (
     <div>
       <form
@@ -20,6 +21,7 @@ function HomePage() {
 
           const data = await response.json();
           console.log(data);
+          setImageUrl(data.url)
         }}
       >
         <input
@@ -30,6 +32,11 @@ function HomePage() {
         />
         <button>Enviar</button>
       </form>
+      {
+        imageUrl && (
+          <img src={imageUrl} alt="" />
+        )
+      }
     </div>
   );
 }
