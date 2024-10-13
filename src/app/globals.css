@@ -2,4 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-*{background: #000;}
+.imagen{object-fit: cover;
+    z-index: -2;}
+
