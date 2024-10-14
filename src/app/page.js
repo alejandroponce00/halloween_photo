@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Fondo from "./components/fondo/fondo";
 
 function HomePage() {
@@ -9,6 +9,8 @@ function HomePage() {
   const [loading, setLoading] = useState(false);
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState(null);
+  const [timer, setTimer] = useState(20); // Nuevo estado para el temporizador
+  const [isCounting, setIsCounting] = useState(false); // Para controlar el inicio de la cuenta regresiva
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,10 +42,14 @@ function HomePage() {
       // Comienza la transformación de la imagen
       setGenerating(true);
 
+      // Inicia la cuenta regresiva de 20 segundos
+      setIsCounting(true);
+      setTimer(20);
+
       // Manipulación de la URL para agregar fondo de Halloween
       const halloweenBackgroundUrl = `${data.url.replace(
         "/upload/",
-        "/upload/e_gen_background_replace:prompt_Pon%20un%20fondo%20de%20terror%20ambientado%20en%20halloween%20c_scale,w_800/"
+        "/upload/e_gen_background_replace:prompt_Pon%20un%20fondo%20de%20terror%20ambientado%20en%20halloween%20con%20niebla%20c_scale,w_800/"
       )}`;
       
       setTransformedUrl(halloweenBackgroundUrl);
@@ -55,6 +61,21 @@ function HomePage() {
       setGenerating(false);
     }
   };
+
+  // Hook para la cuenta regresiva
+  useEffect(() => {
+    let interval = null;
+
+    if (isCounting && timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prevTime) => prevTime - 1);
+      }, 1000);
+    } else if (timer === 0) {
+      setIsCounting(false); // Detener la cuenta regresiva cuando llegue a 0
+    }
+
+    return () => clearInterval(interval);
+  }, [isCounting, timer]);
 
   return (
     <div className="p-4 mx-10">
@@ -92,7 +113,15 @@ function HomePage() {
           </div>
           <div className="w-1/2 text-center">
             {generating && <p>Generando imagen con fondo de Halloween...</p>}
-            <h3 className="py-2 text-red-400/50   text-center text-5xl">Imagen con fondo de Halloween</h3>
+
+            {/* Mostrar la cuenta regresiva si está en progreso */}
+            {isCounting && (
+              <p className="text-2xl font-bold text-yellow-500">
+                La imagen estará lista en: {timer} segundos
+              </p>
+            )}
+
+            <h3 className="py-2 text-red-400/50 text-center text-5xl">Imagen con fondo de Halloween</h3>
             <img
               src={transformedUrl}
               alt="Imagen con fondo de Halloween"
