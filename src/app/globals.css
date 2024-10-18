@@ -4,4 +4,15 @@
 
 .imagen{object-fit: cover;
     z-index: -2;}
+    .customStyle {
+        color: red;
+        font-size: 30px;
+        text-align: center;
+      }    
 
+h1{
+    font-size: 50px;
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+}

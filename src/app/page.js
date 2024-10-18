@@ -1,6 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Fondo from "./components/fondo/fondo";
+import { nosi } from "./fonts/fonts";
+import styles from './globals.css'
+
+
+
 
 function HomePage() {
   const [file, setFiles] = useState(null);
@@ -80,7 +85,7 @@ function HomePage() {
   return (
     <div className="p-4 mx-10">
       <Fondo />
-      <h1 className="text-8xl text-center text-slate-500 font-bold">Photo Halloween</h1>
+      <h1 className={`${nosi.className} ${styles.customStyle}`}>Photo Halloween</h1>
       <div className="flex justify-center my-10">
         <form onSubmit={handleSubmit} className="text-white my-4">
           <input
