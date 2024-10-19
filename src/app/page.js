@@ -83,9 +83,9 @@ function HomePage() {
   }, [isCounting, timer]);
 
   return (
-    <div className="p-4 mx-10">
+    <div className="p-4 mx-10 content-center">
       <Fondo />
-      <h1 className={`${nosi.className} ${styles.customStyle}`}>Photo Halloween</h1>
+      <h1 className={`${nosi.className} ${styles.customStyle}`}>Photo <br />Halloween</h1>
       <div className="flex justify-center my-10">
         <form onSubmit={handleSubmit} className="text-white my-4">
           <input
@@ -113,7 +113,7 @@ function HomePage() {
       {imageUrl && transformedUrl && (
         <div className="flex justify-between mt-10">
           <div className="w-1/2 text-left">
-            <h3 className="py-2 text-red-200/40  text-center text-5xl">Imagen original</h3>
+            <h3 className=" py-2 text-red-200/40  text-center  ">Imagen original</h3>
             <img src={imageUrl} alt="Imagen original" className="w-full block max-h-screen object-cover border-double  border-2 border-sky-500 p-3"  />
           </div>
           <div className="w-1/2 text-center">
@@ -126,7 +126,7 @@ function HomePage() {
               </p>
             )}
 
-            <h3 className="py-2 text-red-400/50 text-center text-5xl">Imagen con fondo de Halloween</h3>
+            <h3 className="py-2 text-red-400/50 text-center ">Photo Halloween</h3>
             <img
               src={transformedUrl}
               alt="Imagen con fondo de Halloween"
