@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎃 Halloween_Photo 👻
 
-## Getting Started
+Este proyecto es una aplicación web en la que puedes subir una foto y la API de Cloudinary se encarga de cambiar el fondo a uno temático de Halloween. ¡Transforma tus fotos con un toque espeluznante! 🧛‍♂️
 
-First, run the development server:
+## 🚀 Tecnologías Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js**: Framework de React para SSR y SSG.
+- **Tailwind CSS**: Framework de estilos para una rápida y moderna UI.
+- **Cloudinary API**: Servicio en la nube para procesamiento de imágenes y cambios de fondo.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Objetivo
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Este proyecto fue creado para la **Hackatón de Cloudinary**. El objetivo es brindar una experiencia divertida y rápida para que los usuarios puedan modificar sus fotos con temas de Halloween de forma sencilla.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## ✨ Funcionalidades
 
-## Learn More
+- Subir una foto desde tu dispositivo 📸.
+- Cloudinary cambiará el fondo a uno de Halloween automáticamente 🎃.
+- Descarga tu imagen con el nuevo fondo 🕸️.
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Instalación
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clona este repositorio:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   [git clone https://github.com/tuusuario/halloween-photo-changer.git](https://github.com/alejandroponce00/halloween_photo.git)
