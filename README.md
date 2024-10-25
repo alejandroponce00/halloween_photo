@@ -23,4 +23,4 @@ Este proyecto fue creado para la **Hackatón de Cloudinary**. El objetivo es bri
 1. Clona este repositorio:
 
    ```bash
-   [git clone https://github.com/tuusuario/halloween-photo-changer.git](https://github.com/alejandroponce00/halloween_photo.git)
+   [git clone https://github.com/alejandroponce00/halloween_photo.git)]
